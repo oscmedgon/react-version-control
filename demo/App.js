@@ -59,6 +59,9 @@ export default class App extends React.Component {
             >
                 <div className='version-form'>
                     <h1 className='title'>Version control settings</h1>
+                    <p className='title'>
+                        To test it just write different versions in the inputs "current" and "latest" and click check update
+                    </p>
                     <div className='input-container'>
                         <h3>Current version</h3>
                         <input
