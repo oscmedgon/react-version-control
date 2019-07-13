@@ -48,7 +48,7 @@ module.exports = function (grunt) {
             demo: {
                 options: {
                     // Update the remote to point to your github repo
-                    remote: 'git@github.com:fiznool/super-awesome.git',
+                    remote: 'git@github.com:oscmedgon/react-version-control.git',
                     branch: 'gh-pages',
                 }
             }
@@ -81,6 +81,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', ['clean', 'copy', 'browserify']);
     grunt.registerTask('serve', ['build', 'connect', 'watch']);
-    // grunt.registerTask('deploy', ['build', 'buildcontrol']);
+    grunt.registerTask('deploy', ['build', 'buildcontrol']);
     grunt.registerTask('default', ['serve']);
 };

@@ -58,6 +58,27 @@ export default class VersionControl extends Component {
         this.handleCheckUpdate();
     }
 
+    componentWillReceiveProps({debug, enabled, version}) {
+        if (debug !== this.props.debug) {
+            this.setState((state) => {
+                state.debug = debug;
+                return state;
+            })
+        }
+        if (enabled !== this.props.enabled) {
+            this.setState((state) => {
+                state.enabled = enabled;
+                return state;
+            })
+        }
+        if (version !== this.props.version) {
+            this.setState((state) => {
+                state.version = version;
+                return state;
+            })
+        }
+    }
+
     componentWillUnmount() {
         if (this.updateDaemon) {
             clearTimeout(this.updateDaemon);
@@ -78,6 +99,7 @@ export default class VersionControl extends Component {
 
 
     timeoutCallback = () => {
+        const {version} = this.state;
         const {getLatestVersion, checkVersion} = this.props;
         const lastVersion = getLatestVersion();
         let updated = true;
@@ -88,7 +110,7 @@ export default class VersionControl extends Component {
                 throw error.stack;
             }
         } else {
-            updated = this.state.version === lastVersion;
+            updated = version === lastVersion;
         }
         if (!updated) {
             if (debug) {
@@ -132,8 +154,12 @@ export default class VersionControl extends Component {
             if (onLoad) {
                 this.manageUpdate()
             } else if (hotUpdate) {
-                return renderHotUpdate(children)
-
+                return (
+                    <React.Fragment>
+                        {children}
+                        {renderHotUpdate(this.manageUpdate)}
+                    </React.Fragment>
+                )
             } else {
                 return children;
             }

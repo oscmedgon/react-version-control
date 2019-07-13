@@ -1,11 +1,6 @@
-import VersionControl from '../lib'
-ReactDOM.render(
-    <div>
-        <VersionControl
+import App from './App';
 
-        >
-            <h1>Hola que ase illo</h1>
-        </VersionControl>
-    </div>,
+ReactDOM.render(
+    <App />,
     document.getElementById('root')
 );
