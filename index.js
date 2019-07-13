@@ -1,7 +1,10 @@
 require=(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-"use strict";var _lib=_interopRequireDefault(require("../lib"));function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{"default":obj};}ReactDOM.render(React.createElement("div",null,React.createElement(_lib["default"],null,React.createElement("h1",null,"Hola que ase illo"))),document.getElementById('root'));
+"use strict";Object.defineProperty(exports,"__esModule",{value:true});exports["default"]=void 0;var _lib=_interopRequireDefault(require("../lib"));function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{"default":obj};}function _typeof(obj){if(typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"){_typeof=function _typeof(obj){return typeof obj;};}else{_typeof=function _typeof(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol&&obj!==Symbol.prototype?"symbol":typeof obj;};}return _typeof(obj);}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}function _createClass(Constructor,protoProps,staticProps){if(protoProps)_defineProperties(Constructor.prototype,protoProps);if(staticProps)_defineProperties(Constructor,staticProps);return Constructor;}function _possibleConstructorReturn(self,call){if(call&&(_typeof(call)==="object"||typeof call==="function")){return call;}return _assertThisInitialized(self);}function _getPrototypeOf(o){_getPrototypeOf=Object.setPrototypeOf?Object.getPrototypeOf:function _getPrototypeOf(o){return o.__proto__||Object.getPrototypeOf(o);};return _getPrototypeOf(o);}function _assertThisInitialized(self){if(self===void 0){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function");}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,writable:true,configurable:true}});if(superClass)_setPrototypeOf(subClass,superClass);}function _setPrototypeOf(o,p){_setPrototypeOf=Object.setPrototypeOf||function _setPrototypeOf(o,p){o.__proto__=p;return o;};return _setPrototypeOf(o,p);}function _defineProperty(obj,key,value){if(key in obj){Object.defineProperty(obj,key,{value:value,enumerable:true,configurable:true,writable:true});}else{obj[key]=value;}return obj;}var App=/*#__PURE__*/function(_React$Component){_inherits(App,_React$Component);function App(){var _getPrototypeOf2;var _this;_classCallCheck(this,App);for(var _len=arguments.length,args=new Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}_this=_possibleConstructorReturn(this,(_getPrototypeOf2=_getPrototypeOf(App)).call.apply(_getPrototypeOf2,[this].concat(args)));_defineProperty(_assertThisInitialized(_this),"state",{formData:{version:'',lastVersion:'',enabled:true,debug:true}});_defineProperty(_assertThisInitialized(_this),"handleChangeInput",function(_ref){var _ref$target=_ref.target,id=_ref$target.id,value=_ref$target.value;_this.setState(function(state){state.formData[id]=value;return state;});});_defineProperty(_assertThisInitialized(_this),"manageCheckbox",function(_ref2){var _ref2$target=_ref2.target,id=_ref2$target.id,checked=_ref2$target.checked;_this.setState(function(state){state.formData[id]=checked;return state;});});_defineProperty(_assertThisInitialized(_this),"handleCheckUpdate",function(){var versionController=_this.refs['versionController'];versionController.handleCheckUpdate(true);});_defineProperty(_assertThisInitialized(_this),"renderUpdateContent",function(update){return React.createElement("div",{className:"update-container"},React.createElement("h3",null,"Update available"),React.createElement("p",null,"You are running an outdated version of the app, just click the button to update."),React.createElement("button",{onClick:update},"UPDATE NOW"));});return _this;}_createClass(App,[{key:"render",value:function render(){var _this$state$formData=this.state.formData,version=_this$state$formData.version,lastVersion=_this$state$formData.lastVersion,enabled=_this$state$formData.enabled,debug=_this$state$formData.debug;return React.createElement(_lib["default"],{getLatestVersion:function getLatestVersion(){return lastVersion;},version:version,enabled:enabled,debug:debug,ref:"versionController",renderHotUpdate:this.renderUpdateContent},React.createElement("div",{className:"version-form"},React.createElement("h1",{className:"title"},"Version control settings"),React.createElement("div",{className:"input-container"},React.createElement("h3",null,"Current version"),React.createElement("input",{type:"text",id:"version",value:version,onChange:this.handleChangeInput,placeholder:"Write here..."})),React.createElement("div",{className:"input-container"},React.createElement("h3",null,"Latest version"),React.createElement("input",{type:"text",id:"lastVersion",value:lastVersion,onChange:this.handleChangeInput,placeholder:"Write here..."})),React.createElement("div",{className:"input-container"},React.createElement("h3",null,"Enabled"),React.createElement("input",{type:"checkbox",id:"enabled",checked:enabled,onChange:this.manageCheckbox})),React.createElement("div",{className:"input-container"},React.createElement("h3",null,"Debug"),React.createElement("input",{type:"checkbox",id:"debug",checked:debug,onChange:this.manageCheckbox})),React.createElement("button",{onClick:this.handleCheckUpdate,className:"check-update"},"Check for update")));}}]);return App;}(React.Component);exports["default"]=App;
 
 },{"../lib":"diffex"}],2:[function(require,module,exports){
+"use strict";var _App=_interopRequireDefault(require("./App"));function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{"default":obj};}ReactDOM.render(React.createElement(_App["default"],null),document.getElementById('root'));
+
+},{"./App":1}],3:[function(require,module,exports){
 /*
 object-assign
 (c) Sindre Sorhus
@@ -93,7 +96,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -279,7 +282,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -385,7 +388,7 @@ checkPropTypes.resetWarningCache = function() {
 module.exports = checkPropTypes;
 
 }).call(this,require('_process'))
-},{"./lib/ReactPropTypesSecret":8,"_process":3}],5:[function(require,module,exports){
+},{"./lib/ReactPropTypesSecret":9,"_process":4}],6:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -451,7 +454,7 @@ module.exports = function() {
   return ReactPropTypes;
 };
 
-},{"./lib/ReactPropTypesSecret":8}],6:[function(require,module,exports){
+},{"./lib/ReactPropTypesSecret":9}],7:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -1046,7 +1049,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 };
 
 }).call(this,require('_process'))
-},{"./checkPropTypes":4,"./lib/ReactPropTypesSecret":8,"_process":3,"object-assign":2,"react-is":11}],7:[function(require,module,exports){
+},{"./checkPropTypes":5,"./lib/ReactPropTypesSecret":9,"_process":4,"object-assign":3,"react-is":12}],8:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -1069,7 +1072,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./factoryWithThrowingShims":5,"./factoryWithTypeCheckers":6,"_process":3,"react-is":11}],8:[function(require,module,exports){
+},{"./factoryWithThrowingShims":6,"./factoryWithTypeCheckers":7,"_process":4,"react-is":12}],9:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -1083,7 +1086,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 (function (process){
 /** @license React v16.8.6
  * react-is.development.js
@@ -1314,7 +1317,7 @@ exports.isSuspense = isSuspense;
 }
 
 }).call(this,require('_process'))
-},{"_process":3}],10:[function(require,module,exports){
+},{"_process":4}],11:[function(require,module,exports){
 /** @license React v16.8.6
  * react-is.production.min.js
  *
@@ -1331,7 +1334,7 @@ exports.Fragment=e;exports.Lazy=r;exports.Memo=q;exports.Portal=d;exports.Profil
 exports.isContextProvider=function(a){return t(a)===h};exports.isElement=function(a){return"object"===typeof a&&null!==a&&a.$$typeof===c};exports.isForwardRef=function(a){return t(a)===n};exports.isFragment=function(a){return t(a)===e};exports.isLazy=function(a){return t(a)===r};exports.isMemo=function(a){return t(a)===q};exports.isPortal=function(a){return t(a)===d};exports.isProfiler=function(a){return t(a)===g};exports.isStrictMode=function(a){return t(a)===f};
 exports.isSuspense=function(a){return t(a)===p};
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -1342,7 +1345,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./cjs/react-is.development.js":9,"./cjs/react-is.production.min.js":10,"_process":3}],12:[function(require,module,exports){
+},{"./cjs/react-is.development.js":10,"./cjs/react-is.production.min.js":11,"_process":4}],13:[function(require,module,exports){
 (function (process){
 /** @license React v16.8.6
  * react.development.js
@@ -3247,7 +3250,7 @@ module.exports = react;
 }
 
 }).call(this,require('_process'))
-},{"_process":3,"object-assign":2,"prop-types/checkPropTypes":4}],13:[function(require,module,exports){
+},{"_process":4,"object-assign":3,"prop-types/checkPropTypes":5}],14:[function(require,module,exports){
 /** @license React v16.8.6
  * react.production.min.js
  *
@@ -3274,7 +3277,7 @@ b,d){return W().useImperativeHandle(a,b,d)},useDebugValue:function(){},useLayout
 b){void 0!==b.ref&&(h=b.ref,f=J.current);void 0!==b.key&&(g=""+b.key);var l=void 0;a.type&&a.type.defaultProps&&(l=a.type.defaultProps);for(c in b)K.call(b,c)&&!L.hasOwnProperty(c)&&(e[c]=void 0===b[c]&&void 0!==l?l[c]:b[c])}c=arguments.length-2;if(1===c)e.children=d;else if(1<c){l=Array(c);for(var m=0;m<c;m++)l[m]=arguments[m+2];e.children=l}return{$$typeof:p,type:a.type,key:g,ref:h,props:e,_owner:f}},createFactory:function(a){var b=M.bind(null,a);b.type=a;return b},isValidElement:N,version:"16.8.6",
 unstable_ConcurrentMode:x,unstable_Profiler:u,__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{ReactCurrentDispatcher:I,ReactCurrentOwner:J,assign:k}},Y={default:X},Z=Y&&X||Y;module.exports=Z.default||Z;
 
-},{"object-assign":2}],14:[function(require,module,exports){
+},{"object-assign":3}],15:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -3285,7 +3288,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./cjs/react.development.js":12,"./cjs/react.production.min.js":13,"_process":3}],"diffex":[function(require,module,exports){
+},{"./cjs/react.development.js":13,"./cjs/react.production.min.js":14,"_process":4}],"diffex":[function(require,module,exports){
 "use strict";function _typeof2(obj){if(typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"){_typeof2=function _typeof2(obj){return typeof obj;};}else{_typeof2=function _typeof2(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol&&obj!==Symbol.prototype?"symbol":typeof obj;};}return _typeof2(obj);}Object.defineProperty(exports,"__esModule",{value:true});exports["default"]=void 0;var _react=_interopRequireWildcard(require("react"));var _propTypes=_interopRequireDefault(require("prop-types"));function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{"default":obj};}function _interopRequireWildcard(obj){if(obj&&obj.__esModule){return obj;}else{var newObj={};if(obj!=null){for(var key in obj){if(Object.prototype.hasOwnProperty.call(obj,key)){var desc=Object.defineProperty&&Object.getOwnPropertyDescriptor?Object.getOwnPropertyDescriptor(obj,key):{};if(desc.get||desc.set){Object.defineProperty(newObj,key,desc);}else{newObj[key]=obj[key];}}}}newObj["default"]=obj;return newObj;}}function _typeof(obj){if(typeof Symbol==="function"&&_typeof2(Symbol.iterator)==="symbol"){_typeof=function _typeof(obj){return _typeof2(obj);};}else{_typeof=function _typeof(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol&&obj!==Symbol.prototype?"symbol":_typeof2(obj);};}return _typeof(obj);}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}function _createClass(Constructor,protoProps,staticProps){if(protoProps)_defineProperties(Constructor.prototype,protoProps);if(staticProps)_defineProperties(Constructor,staticProps);return Constructor;}function _possibleConstructorReturn(self,call){if(call&&(_typeof(call)==="object"||typeof call==="function")){return call;}return _assertThisInitialized(self);}function _getPrototypeOf(o){_getPrototypeOf=Object.setPrototypeOf?Object.getPrototypeOf:function _getPrototypeOf(o){return o.__proto__||Object.getPrototypeOf(o);};return _getPrototypeOf(o);}function _assertThisInitialized(self){if(self===void 0){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function");}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,writable:true,configurable:true}});if(superClass)_setPrototypeOf(subClass,superClass);}function _setPrototypeOf(o,p){_setPrototypeOf=Object.setPrototypeOf||function _setPrototypeOf(o,p){o.__proto__=p;return o;};return _setPrototypeOf(o,p);}function _defineProperty(obj,key,value){if(key in obj){Object.defineProperty(obj,key,{value:value,enumerable:true,configurable:true,writable:true});}else{obj[key]=value;}return obj;}/**
  *
  * @param children
@@ -3297,6 +3300,6 @@ if (process.env.NODE_ENV === 'production') {
  * @param enabled
  * @returns {*}
  * @constructor
- */var VersionControl=/*#__PURE__*/function(_Component){_inherits(VersionControl,_Component);function VersionControl(props){var _this;_classCallCheck(this,VersionControl);_this=_possibleConstructorReturn(this,_getPrototypeOf(VersionControl).call(this,props));_defineProperty(_assertThisInitialized(_this),"handleCheckUpdate",function(force){if(force){_this.timeoutCallback();}if(_this.updateDaemon){clearTimeout(_this.updateDaemon);}var time=30*60*1000;_this.updateDaemon=setTimeout(_this.timeoutCallback,time);});_defineProperty(_assertThisInitialized(_this),"timeoutCallback",function(){var _this$props=_this.props,getLatestVersion=_this$props.getLatestVersion,checkVersion=_this$props.checkVersion;var lastVersion=getLatestVersion();var updated=true;if(checkVersion&&typeof checkVersion==='function'){updated=checkVersion(version,lastVersion);if(typeof updated!=='boolean'){var error=new Error("Function checkVersion should return boolean but returned ".concat(_typeof(updated)));throw error.stack;}}else{updated=_this.state.version===lastVersion;}if(!updated){if(debug){console.table({oldVersion:version,newVersion:lastVersion,message:'New version detected when the app it\'s already mounted.'});}_this.setState(function(state){state.hotUpdate=true;return state;});}});_defineProperty(_assertThisInitialized(_this),"manageUpdate",function(){window.location.reload(true);});_defineProperty(_assertThisInitialized(_this),"setDevelopmentEnhancers",function(){console.info('--------------------------------');console.info('Setting up development enhancers');try{window.setHotUpdate=function(){_this.setState({hotUpdate:!_this.state.hotUpdate});};window.setLoadUpdate=function(){_this.setState({onLoad:!_this.state.onLoad});};console.info('Enhancers are ready, now you can use this methods to update the state, for more info look at the documentation: https://gitlab.com/oscmedgon/versioncontrol/blob/master/README.md');}catch(error){console.error('Error setting up development enhancers, this doesn\'t affects to the component standard behaviour, but you can report the error.');console.error(error.stack);}});var _version=props.version,_props$debug=props.debug,_debug=_props$debug===void 0?true:_props$debug,_props$enabled=props.enabled,enabled=_props$enabled===void 0?true:_props$enabled,_props$getLatestVersi=props.getLatestVersion,_getLatestVersion=_props$getLatestVersi===void 0?Function:_props$getLatestVersi,_checkVersion=props.checkVersion;var _state={version:_version,debug:_debug,enabled:enabled,onLoad:false,hotUpdate:false,disabled:false};if(enabled){var lastVersion=_getLatestVersion();var updated=true;if(_checkVersion&&typeof _checkVersion==='function'){updated=_checkVersion(_version,lastVersion);if(typeof updated!=='boolean'){var error=new Error("Function checkVersion should return boolean but returned ".concat(_typeof(updated)));throw error.stack;}}else{updated=_version===lastVersion;}if(!updated){if(_debug){console.table({oldVersion:_version,newVersion:lastVersion,message:'New version detected at the first load proceeding to reload the page.'});}_state.onLoad=true;}}if(_debug){_this.setDevelopmentEnhancers();}_this.state=_state;return _this;}_createClass(VersionControl,[{key:"componentDidMount",value:function componentDidMount(){this.handleCheckUpdate();}},{key:"componentWillUnmount",value:function componentWillUnmount(){if(this.updateDaemon){clearTimeout(this.updateDaemon);}}},{key:"render",value:function render(){var _this$state=this.state,hotUpdate=_this$state.hotUpdate,enabled=_this$state.enabled,onLoad=_this$state.onLoad;var _this$props2=this.props,children=_this$props2.children,renderHotUpdate=_this$props2.renderHotUpdate;if(!enabled){return children;}else{if(onLoad){this.manageUpdate();}else if(hotUpdate){return renderHotUpdate(children);}else{return children;}}}}]);return VersionControl;}(_react.Component);exports["default"]=VersionControl;_defineProperty(VersionControl,"propTypes",{children:_propTypes["default"].node.isRequired,version:_propTypes["default"].string.isRequired,getLatestVersion:_propTypes["default"].func.isRequired,checkVersion:_propTypes["default"].func,renderHotUpdate:_propTypes["default"].func.isRequired,debug:_propTypes["default"].bool,enabled:_propTypes["default"].bool});_defineProperty(VersionControl,"defaultProps",{version:'version',getLatestVersion:function getLatestVersion(){return'version';},renderHotUpdate:function renderHotUpdate(children){return _react["default"].createElement("div",{className:"version-control"},children,_react["default"].createElement("h1",null,"Update available"));}});
+ */var VersionControl=/*#__PURE__*/function(_Component){_inherits(VersionControl,_Component);function VersionControl(props){var _this;_classCallCheck(this,VersionControl);_this=_possibleConstructorReturn(this,_getPrototypeOf(VersionControl).call(this,props));_defineProperty(_assertThisInitialized(_this),"handleCheckUpdate",function(force){if(force){_this.timeoutCallback();}if(_this.updateDaemon){clearTimeout(_this.updateDaemon);}var time=30*60*1000;_this.updateDaemon=setTimeout(_this.timeoutCallback,time);});_defineProperty(_assertThisInitialized(_this),"timeoutCallback",function(){var version=_this.state.version;var _this$props=_this.props,getLatestVersion=_this$props.getLatestVersion,checkVersion=_this$props.checkVersion;var lastVersion=getLatestVersion();var updated=true;if(checkVersion&&typeof checkVersion==='function'){updated=checkVersion(version,lastVersion);if(typeof updated!=='boolean'){var error=new Error("Function checkVersion should return boolean but returned ".concat(_typeof(updated)));throw error.stack;}}else{updated=version===lastVersion;}if(!updated){if(debug){console.table({oldVersion:version,newVersion:lastVersion,message:'New version detected when the app it\'s already mounted.'});}_this.setState(function(state){state.hotUpdate=true;return state;});}});_defineProperty(_assertThisInitialized(_this),"manageUpdate",function(){window.location.reload(true);});_defineProperty(_assertThisInitialized(_this),"setDevelopmentEnhancers",function(){console.info('--------------------------------');console.info('Setting up development enhancers');try{window.setHotUpdate=function(){_this.setState({hotUpdate:!_this.state.hotUpdate});};window.setLoadUpdate=function(){_this.setState({onLoad:!_this.state.onLoad});};console.info('Enhancers are ready, now you can use this methods to update the state, for more info look at the documentation: https://gitlab.com/oscmedgon/versioncontrol/blob/master/README.md');}catch(error){console.error('Error setting up development enhancers, this doesn\'t affects to the component standard behaviour, but you can report the error.');console.error(error.stack);}});var _version=props.version,_props$debug=props.debug,_debug=_props$debug===void 0?true:_props$debug,_props$enabled=props.enabled,enabled=_props$enabled===void 0?true:_props$enabled,_props$getLatestVersi=props.getLatestVersion,_getLatestVersion=_props$getLatestVersi===void 0?Function:_props$getLatestVersi,_checkVersion=props.checkVersion;var _state={version:_version,debug:_debug,enabled:enabled,onLoad:false,hotUpdate:false,disabled:false};if(enabled){var lastVersion=_getLatestVersion();var updated=true;if(_checkVersion&&typeof _checkVersion==='function'){updated=_checkVersion(_version,lastVersion);if(typeof updated!=='boolean'){var error=new Error("Function checkVersion should return boolean but returned ".concat(_typeof(updated)));throw error.stack;}}else{updated=_version===lastVersion;}if(!updated){if(_debug){console.table({oldVersion:_version,newVersion:lastVersion,message:'New version detected at the first load proceeding to reload the page.'});}_state.onLoad=true;}}if(_debug){_this.setDevelopmentEnhancers();}_this.state=_state;return _this;}_createClass(VersionControl,[{key:"componentDidMount",value:function componentDidMount(){this.handleCheckUpdate();}},{key:"componentWillReceiveProps",value:function componentWillReceiveProps(_ref){var debug=_ref.debug,enabled=_ref.enabled,version=_ref.version;if(debug!==this.props.debug){this.setState(function(state){state.debug=debug;return state;});}if(enabled!==this.props.enabled){this.setState(function(state){state.enabled=enabled;return state;});}if(version!==this.props.version){this.setState(function(state){state.version=version;return state;});}}},{key:"componentWillUnmount",value:function componentWillUnmount(){if(this.updateDaemon){clearTimeout(this.updateDaemon);}}},{key:"render",value:function render(){var _this$state=this.state,hotUpdate=_this$state.hotUpdate,enabled=_this$state.enabled,onLoad=_this$state.onLoad;var _this$props2=this.props,children=_this$props2.children,renderHotUpdate=_this$props2.renderHotUpdate;if(!enabled){return children;}else{if(onLoad){this.manageUpdate();}else if(hotUpdate){return _react["default"].createElement(_react["default"].Fragment,null,children,renderHotUpdate(this.manageUpdate));}else{return children;}}}}]);return VersionControl;}(_react.Component);exports["default"]=VersionControl;_defineProperty(VersionControl,"propTypes",{children:_propTypes["default"].node.isRequired,version:_propTypes["default"].string.isRequired,getLatestVersion:_propTypes["default"].func.isRequired,checkVersion:_propTypes["default"].func,renderHotUpdate:_propTypes["default"].func.isRequired,debug:_propTypes["default"].bool,enabled:_propTypes["default"].bool});_defineProperty(VersionControl,"defaultProps",{version:'version',getLatestVersion:function getLatestVersion(){return'version';},renderHotUpdate:function renderHotUpdate(children){return _react["default"].createElement("div",{className:"version-control"},children,_react["default"].createElement("h1",null,"Update available"));}});
 
-},{"prop-types":7,"react":14}]},{},[1]);
+},{"prop-types":8,"react":15}]},{},[2]);
