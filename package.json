@@ -1,8 +1,7 @@
 {
     "name": "react-version-control",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Stop fearing if your clients uses an outdated version of your react web app.",
-    "bin": "./lib/index.js",
     "main": "src",
     "scripts": {
         "build": "babel src/index.js -d lib",
