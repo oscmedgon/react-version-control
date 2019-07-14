@@ -11,7 +11,6 @@ config.gypi
 CVS
 npm-debug.log
 .idea
-.babelrc
 .gitignore
 src
 .nvmrc
@@ -20,4 +19,3 @@ gruntfile.js
 build/index.css
 build/index.html
 build/index.js
-src/index.js
