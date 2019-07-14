@@ -140,6 +140,10 @@ export default class VersionControl extends Component {
             window.setHotUpdate = () => {this.setState({hotUpdate: !this.state.hotUpdate});};
             window.setLoadUpdate = () => {this.setState({onLoad: !this.state.onLoad});};
             console.info('Enhancers are ready, now you can use this methods to update the state, for more info look at the documentation: https://gitlab.com/oscmedgon/versioncontrol/blob/master/README.md')
+            console.table({
+                'window.setHotUpdate': 'Set the hot update to true to force show the notification',
+                'window.setLoadUpdate': 'Set the onLoad, the version control will automatically update the page'
+            })
         } catch (error) {
             console.error('Error setting up development enhancers, this doesn\'t affects to the component standard behaviour, but you can report the error.');
             console.error(error.stack)

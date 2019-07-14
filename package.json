@@ -1,59 +1,60 @@
 {
-  "name": "react-version-control",
-  "version": "1.0.0",
-  "description": "A react package to notify users about app updates.",
-  "main": "src",
-  "scripts": {
-    "build": "babel src/index.js -d lib",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@gitlab.com/oscmedgon/versioncontrol.git"
-  },
-  "author": "devosc",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://gitlab.com/oscmedgon/versioncontrol/issues"
-  },
-  "homepage": "https://gitlab.com/oscmedgon/versioncontrol#readme",
-  "devDependencies": {
-    "@babel/cli": "^7.5.0",
-    "@babel/core": "^7.5.4",
-    "@babel/plugin-proposal-class-properties": "^7.0.0",
-    "@babel/plugin-proposal-decorators": "^7.0.0",
-    "@babel/plugin-proposal-do-expressions": "^7.0.0",
-    "@babel/plugin-proposal-export-default-from": "^7.0.0",
-    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
-    "@babel/plugin-proposal-function-bind": "^7.0.0",
-    "@babel/plugin-proposal-function-sent": "^7.0.0",
-    "@babel/plugin-proposal-json-strings": "^7.0.0",
-    "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
-    "@babel/plugin-proposal-numeric-separator": "^7.0.0",
-    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
-    "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
-    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
-    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
-    "@babel/plugin-syntax-import-meta": "^7.0.0",
-    "@babel/preset-env": "^7.5.4",
-    "@babel/preset-react": "^7.0.0",
-    "babelify": "^10.0.0",
-    "grunt": "^1.0.4",
-    "grunt-browserify": "^5.3.0",
-    "grunt-build-control": "^0.7.1",
-    "grunt-contrib-clean": "^2.0.0",
-    "grunt-contrib-connect": "^2.0.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-uglify": "^4.0.1",
-    "grunt-contrib-watch": "^1.1.0",
-    "jit-grunt": "^0.10.0"
-  },
-  "dependencies": {
-    "react": "^16.8.6",
-    "prop-types": "^15.7.2"
-  },
-  "directories": {
-    "lib": "lib"
-  }
+    "name": "react-version-control",
+    "version": "1.0.2",
+    "description": "Stop fearing if your clients uses an outdated version of your react web app.",
+    "bin": "./lib/index.js",
+    "main": "src",
+    "scripts": {
+        "build": "babel src/index.js -d lib",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com:oscmedgon/react-version-control.git"
+    },
+    "author": "devosc",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/oscmedgon/react-version-control/issues"
+    },
+    "homepage": "https://github.com/oscmedgon/react-version-control#readme",
+    "devDependencies": {
+        "@babel/cli": "^7.5.0",
+        "@babel/core": "^7.5.4",
+        "@babel/plugin-proposal-class-properties": "^7.0.0",
+        "@babel/plugin-proposal-decorators": "^7.0.0",
+        "@babel/plugin-proposal-do-expressions": "^7.0.0",
+        "@babel/plugin-proposal-export-default-from": "^7.0.0",
+        "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+        "@babel/plugin-proposal-function-bind": "^7.0.0",
+        "@babel/plugin-proposal-function-sent": "^7.0.0",
+        "@babel/plugin-proposal-json-strings": "^7.0.0",
+        "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
+        "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+        "@babel/plugin-proposal-numeric-separator": "^7.0.0",
+        "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+        "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
+        "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+        "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+        "@babel/plugin-syntax-import-meta": "^7.0.0",
+        "@babel/preset-env": "^7.5.4",
+        "@babel/preset-react": "^7.0.0",
+        "babelify": "^10.0.0",
+        "grunt": "^1.0.4",
+        "grunt-browserify": "^5.3.0",
+        "grunt-build-control": "^0.7.1",
+        "grunt-contrib-clean": "^2.0.0",
+        "grunt-contrib-connect": "^2.0.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-uglify": "^4.0.1",
+        "grunt-contrib-watch": "^1.1.0",
+        "jit-grunt": "^0.10.0"
+    },
+    "dependencies": {
+        "react": "^16.8.6",
+        "prop-types": "^15.7.2"
+    },
+    "directories": {
+        "lib": "lib"
+    }
 }
