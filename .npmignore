@@ -16,6 +16,5 @@ src
 .nvmrc
 demo
 gruntfile.js
-build/index.css
-build/index.html
-build/index.js
+build
+webpack.config.js
