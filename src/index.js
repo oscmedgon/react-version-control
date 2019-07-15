@@ -59,24 +59,19 @@ export default class VersionControl extends Component {
     }
 
     componentWillReceiveProps({debug, enabled, version}) {
+        const newState = {};
         if (debug !== this.props.debug) {
-            this.setState((state) => {
-                state.debug = debug;
-                return state;
-            })
+            newState.debug = debug;
         }
         if (enabled !== this.props.enabled) {
-            this.setState((state) => {
-                state.enabled = enabled;
-                return state;
-            })
+            newState.enabled = enabled;
         }
         if (version !== this.props.version) {
-            this.setState((state) => {
-                state.version = version;
-                return state;
-            })
+            newState.version = version;
         }
+        this.setState((state) => {
+            return {...state, ...newState};
+        });
     }
 
     componentWillUnmount() {
