@@ -15,7 +15,8 @@ module.exports = function (grunt) {
             demo: {
                 files: {
                     'build/index.html': ['demo/index.html'],
-                    'build/index.css': ['demo/index.css']
+                    'build/index.css': ['demo/index.css'],
+                    'build/CNAME': ['CNAME']
                 }
             }
         },
