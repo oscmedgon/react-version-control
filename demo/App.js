@@ -4,10 +4,12 @@ export default class App extends React.Component {
     state = {
         formData: {
             version: '',
-            lastVersion: '',
+            latestVersion: '',
             enabled: true,
             debug: true,
-        }
+        },
+        version: '',
+        latestVersion: ''
 
     };
     handleChangeInput = ({target: {id, value}}) => {
@@ -39,23 +41,35 @@ export default class App extends React.Component {
         </div>
     );
 
+    checkVersion = () => {
+        this.setState({
+            version: this.state.formData.version,
+            latestVersion: this.state.formData.latestVersion,
+        })
+    };
+
     render () {
         const {
             formData: {
-                version,
-                lastVersion,
                 enabled,
-                debug
-            }
+                debug,
+                ...formData
+            },
+            version,
+            latestVersion,
         } = this.state;
+
+
         return (
             <VersionControl
-                getLatestVersion={() => lastVersion}
+                checkVersion={this.checkVersion}
                 version={version}
+                latestVersion={latestVersion}
                 enabled={enabled}
                 debug={debug}
                 ref='versionController'
                 renderHotUpdate={this.renderUpdateContent}
+                timeout={30000}
             >
                 <div className='version-form'>
                     <h1 className='title'>Version control settings</h1>
@@ -67,7 +81,7 @@ export default class App extends React.Component {
                         <input
                             type="text"
                             id='version'
-                            value={version}
+                            value={formData.version}
                             onChange={this.handleChangeInput}
                             placeholder='Write here...'
                         />
@@ -76,8 +90,8 @@ export default class App extends React.Component {
                         <h3>Latest version</h3>
                         <input
                             type="text"
-                            id='lastVersion'
-                            value={lastVersion}
+                            id='latestVersion'
+                            value={formData.latestVersion}
                             onChange={this.handleChangeInput}
                             placeholder='Write here...'
                         />

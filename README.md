@@ -22,9 +22,9 @@ You need to wrap your application on if, the higher level better, the bet scenar
 |       prop       | type       | required | default value | description                                                                                                                                                                                                      |
 |------------------|------------|----------|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | children         | react node | true     |               | A react node as children to be rendered can be your app component                                                                                                                                                |
-| version          | string     | true     | "version"     | Current version depending on your app, recommended to use process.env                                                                                                                                            |
-| getLatestVersion | function   | true     |               | A function te be executed in order to get the last version. The function should return a string                                                                                                                  |
-| checkVersion     | function   | false    |               | This it's an optional function, bu default version and last version are compared in equity, if you need any special validation this function gets version and las version as arguments and should return boolean |
+| version          | string     | true     | null          | Current version depending on your app, recommended to use process.env                                                                                                                                            |
+| latestVersion    | string     | true     | null          | Latest available version in string, the fetch should be managed in the host app, you need to pass the raw version string                                                                                         |
+| checkVersion     | function   | true     |               | Function executed each iteration where the version manager wants to check an update this function should update the latest and the current version running on the app.                                           |
 | renderHotUpdate  | function   | true     |               | Function that returns a react node, it's executed when te manager detects a new update on run time, this way you can create your own notification and styles                                                     |
 | debug            | boolean    | false    |               | If debug is true version control will mount some dev enhancers see the dedicated section DEV-ENHANCERS                                                                                                           |
 | enabled          | boolean    | false    |               | The module only works if it's enabled, otherwise will only render the children, this can be use for example to test it in determined environments                                                                |
@@ -72,5 +72,5 @@ ___
 - Ensure that the version manager does not get stucked in a update loop caused by a app misconfiguration
 
 [1]: https://facebook.github.io/react/
-[2]: https://www.omwdesign.eu
+[2]: https://www.devosc.com
 [3]: https://versionwatch.devosc.com/
