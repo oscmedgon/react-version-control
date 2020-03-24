@@ -9,7 +9,7 @@ function getConfig(env) {
             path: path.resolve('lib'),
             library: 'VersionControl',
             libraryTarget: 'umd',
-            filename: env === 'production' ? 'VersionControl.min.js' : 'VersionControl.js',
+            filename: env === 'production' ? 'index.min.js' : 'index.js',
             globalObject: 'this'
         },
         target: 'web',

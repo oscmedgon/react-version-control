@@ -1,6 +1,6 @@
 {
     "name": "react-version-control",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "Stop fearing if your clients uses an outdated version of your react web app.",
     "main": "lib/VersionControl.min.js",
     "scripts": {
@@ -18,7 +18,7 @@
     },
     "homepage": "https://github.com/oscmedgon/react-version-control#readme",
     "devDependencies": {
-        "@babel/cli": "^7.5.0",
+        "@babel/cli": "^7.8.4",
         "@babel/core": "^7.5.4",
         "@babel/plugin-proposal-class-properties": "^7.0.0",
         "@babel/plugin-proposal-decorators": "^7.0.0",
@@ -39,7 +39,8 @@
         "@babel/preset-env": "^7.5.4",
         "@babel/preset-react": "^7.0.0",
         "babel-loader": "^8.0.6",
-        "grunt": "^1.0.4",
+        "babelify": "^10.0.0",
+        "grunt": "^1.1.0",
         "grunt-browserify": "^5.3.0",
         "grunt-build-control": "^0.7.1",
         "grunt-contrib-clean": "^2.0.0",
@@ -48,6 +49,7 @@
         "grunt-contrib-uglify": "^4.0.1",
         "grunt-contrib-watch": "^1.1.0",
         "jit-grunt": "^0.10.0",
+        "minimist": "^1.2.5",
         "webpack": "^4.31.0",
         "webpack-cli": "^3.3.2"
     },
