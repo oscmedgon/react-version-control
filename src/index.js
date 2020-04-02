@@ -103,16 +103,14 @@ export default class VersionControl extends Component {
         } else {
             if (onLoad) {
                 this.manageUpdate()
-            } else if (hotUpdate) {
-                return (
-                    <React.Fragment>
-                        {children}
-                        {renderHotUpdate(this.manageUpdate)}
-                    </React.Fragment>
-                )
-            } else {
-                return children;
             }
+            return (
+                <React.Fragment>
+                    {children}
+                    {hotUpdate && renderHotUpdate(this.manageUpdate)}
+                </React.Fragment>
+            )
+
         }
     }
 

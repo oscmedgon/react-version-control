@@ -1,10 +1,11 @@
 {
     "name": "react-version-control",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Stop fearing if your clients uses an outdated version of your react web app.",
     "main": "lib/index.min.js",
     "scripts": {
-        "build": "webpack",
+        "build": "webpack && grunt build",
+        "deploy": "webpack && grunt deploy",
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "webpack && grunt"
     },
